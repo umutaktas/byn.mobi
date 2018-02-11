@@ -8,21 +8,19 @@ import { HomePage } from '../pages/home/home';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CountryPickerProvider } from '../providers/country-picker/country-picker';
-
-
 import { UserDataProvider } from '../providers/user-data/user-data';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import {MyFirebase} from '../providers/my-firebase/my-firebase';
 
 export const firebaseConfig = ({
-    apiKey: "AIzaSyCWmYThVQgqZt6ulzTyPKwh4-95CWDLY6Y",
-    authDomain: "biyonebackend.firebaseapp.com",
-    databaseURL: "https://biyonebackend.firebaseio.com",
-    projectId: "biyonebackend",
-    storageBucket: "biyonebackend.appspot.com",
-    messagingSenderId: "1005362584494"
+    apiKey: "AIzaSyADXJ2n3IJd5Ax8rpWXG8q3-YTyuMyA7ow",
+    authDomain: "biyonezamansizindirim.firebaseapp.com",
+    databaseURL: "https://biyonezamansizindirim.firebaseio.com",
+    projectId: "biyonezamansizindirim",
+    storageBucket: "biyonezamansizindirim.appspot.com",
+    messagingSenderId: "161289504708"
     });
 
 @NgModule({
@@ -52,7 +50,9 @@ export const firebaseConfig = ({
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CountryPickerProvider,
     AngularFireDatabase,
+    AngularFireAuthModule,
     UserDataProvider,
+    MyFirebase,
   ]
 })
 export class AppModule {}
