@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle color="biyone">
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title>Kampanyalar</ion-title>
+
+    <ion-buttons>
+        <!--
+   <button ion-button button-clear icon-only class="button button-cart button-clear" (click)="navCtrl.push('CartPage')">
+       <i><img src="assets/img/icons/cart-icon-dark.png" width="24px"></i>
+       <div class="shopping-cart">
+       <span class="badge badge-assertive header-badge"></span>
+       </div></button>
+       -->
+   </ion-buttons>
+ </ion-navbar>
+</ion-header>
+
+<ion-content >
+   <!--
+   <div class="offer-header animated fadeInRight">
+       <img [src]="offerImgSrc" width="100%">
+     </div>
+
+     -->
+
+      <!-- editorial list -->
+      <ion-list class="animated fadeInUp">
+          <ion-item class="editorial-list" *ngFor="let item of latestProducts | async" no-padding (click)="navCtrl.push('CampaingDetailsPage',{product_id: item.id})">
+            
+            <div class="product-image" [ngStyle]="{'background-image': 'url(' + item.images + ')', 'background-size':'contain'}">
+              </div>
+            <h1>{{item.name}}</h1>
+            <h5>{{item.desc }} </h5>
+          </ion-item>
+        </ion-list>
+
+
+        <!-- product list
+        <div class="product-list animated fadeInUp" >
+            <ul class="list">
+              <li class="list-item" *ngFor="let item of latestProducts" (click)="navCtrl.push('ProductDetailsPage',{product_id: item.id})">
+                <div class="product-image" [ngStyle]="{'background-image': 'url(' + item.images[0].src + ')', 'background-size':'cover'}">
+                </div>
+                <h5>{{item.name}}</h5>
+                <small class="category-name">{{item.categories[0].name}}</small>
+                <small class="price">{{item.desc}}</small>
+              </li>
+            </ul>
+          </div>
+
+    -->
+</ion-content>

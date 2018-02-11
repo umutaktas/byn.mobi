@@ -1,0 +1,61 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="login">
+
+    <form name="signUpForm" #signUpForm="ngForm" autocomplete="false">
+        <div class="signin-input-holder animated fadeInRight">
+    
+          <ion-list>
+              <ion-item>
+                  <i item-start><img src="assets/img/icons/icon_email.svg"></i>
+                  <ion-input type="text" [(ngModel)]="user.email" name="email"  email placeholder="Email" required></ion-input>
+                </ion-item>
+            
+            <ion-item>
+                <i item-start><img src="assets/img/icons/icon_lock.svg"></i>
+                <ion-input type="password" [(ngModel)]="user.password" name="password" minlength="6" placeholder="Password (min 6 char)" required></ion-input>
+      
+              </ion-item>
+            <ion-item [ngClass]="{'has-errors': !reentry.pristine && user.password && user.password != user.reentry}">
+              <i item-start><img src="assets/img/icons/icon_lock.svg"></i>
+              <ion-input type="password" [(ngModel)]="user.reentry" name="reentry" placeholder="Re-enter password" #reentry='ngModel' required></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <i item-start><img src="assets/img/icons/icon_user.svg"></i>
+                <ion-input type="text" [(ngModel)]="user.username" name="username" minlength="6" placeholder="username" required></ion-input>
+              </ion-item>
+    
+          </ion-list>
+    
+          
+          <div class="footer-button animated fadeInUp">
+              
+        
+              <button ion-button outline block round color="dark" margin-bottom [disabled]="!signUpForm || !signUpForm.form.valid || (user.password != user.reentry)" (click)="signUp()">Signup</button>
+              <a ion-button clear block color="light-grey" (click)="skipLogin()">Skip for now</a>
+             
+            <h5 class="light-font color-black"  (click)="navCtrl.pop()">Have an account already? <span class="semibold-font">Signin</span></h5>
+        
+            <p class="padding light-font color-warm-grey">Terms &amp; Conditions</p>
+            </div>
+    
+        </div>
+    
+    
+      </form>
+
+</ion-content>

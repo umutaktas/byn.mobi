@@ -1,0 +1,46 @@
+<ion-menu [content]="content" type="push">
+    <!-- <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header> -->
+
+    <ion-content>
+
+        <div class="menu-header animated fadeInDown">
+            <img src="assets/img/biyone-logo.jpg" width="200px">
+        </div>
+
+        <ion-list>
+            <ion-scroll scrollY="true" class="animated fadeInUp">
+                <button menuClose ion-item detail-none *ngFor="let p of pages" (click)="openPage(p)">
+                    {{p.title}}
+                </button>
+                <button ion-item class="icon-right" menuClose (click)="openCustomPage('CouponsPage')">
+
+
+                    <img src="assets/img/icons/user_icon_light.png" item-end>
+
+                    Kuponlarım
+                </button>
+                <button ion-item class="icon-right" menuClose (click)="openCustomPage('ProfilePage')">
+                    <img src="assets/img/icons/user_icon_light.png" item-end>
+                    Profil
+                </button>
+                <button ion-item class="icon-right" menuClose (click)="openCustomPage('SettingsPage')">
+                    <img src="assets/img/icons/settings_icon.png" item-end>
+                    Ayarlar
+                </button>
+                <button ion-item class="icon-right" menuClose (click)="logout()">
+                    <img src="assets/img/icons/icon-lock-light.png" item-end>
+
+                    Çıkış
+                </button>
+            </ion-scroll>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

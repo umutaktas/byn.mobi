@@ -1,0 +1,82 @@
+page-onboarding {
+
+    @keyframes animation_1 {
+        0% {
+            // transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: translateX(0%);
+            opacity: 1;
+            animation-timing-function: linear
+        }
+        100% {
+            // transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -2300, 0, 0, 1);
+            transform: translateX(calc(-100% + 100vw));
+            opacity: 1;
+        }
+    }
+
+    .onboarding {
+        .image-slider-holder {
+            width: 100%;
+            height: 60vh;
+            margin: 0 auto;
+            overflow: hidden;
+            padding-top: 0px;
+            img {
+                height: 60vh;
+            }
+        }
+        .animate {
+            transform: translateX(0%);
+            opacity: 1;
+            left: 0px;
+            top: -143px;
+            width: calc(60vh * 6.671);
+            height: 60vh;
+            z-index: 106;
+            animation-name: animation_1;
+            animation-duration: 45s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+            animation-play-state: running;
+            img {
+                width: 100%;
+            }
+        }
+        .bottom {
+            height: 40vh;
+            position: relative;
+            img {
+                position: absolute;
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .swiper-slide {
+                h5 {
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -40%);
+                    width: 80%;
+                    font-family: 'montserratlight';
+                    line-height: 1.71;
+                    color: color($colors, warm-grey);
+                }
+            }
+            .swiper-pagination {
+                bottom: 30px !important;
+            }
+        }
+        .skip-button {
+            position: absolute;
+            bottom: 10px;
+            right: 25px;
+            z-index: 9999;
+            img {
+                width: 24px;
+            }
+        }
+    }
+
+}

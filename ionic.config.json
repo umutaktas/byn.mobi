@@ -1,0 +1,8 @@
+{
+  "name": "biyone",
+  "app_id": "8e9bda40",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,82 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div class="cart-list">
+        
+              <ion-list *ngIf="products.length">
+    <ion-item *ngFor="let item of products" class="item-icon-right">
+        <ion-thumbnail item-start>
+              <img [src]="item.imgUrl">
+              </ion-thumbnail>
+
+               <h5>{{item.name}}</h5>
+                              <small class="category-name">{{item.category}}</small>
+                              <small class="size"> <span *ngIf="item.size">Size: {{item.size | uppercase}}</span><span *ngIf="item.color">, Color: {{item.color | uppercase}}</span></small>
+                              <small class="">Est. Delivery 5-6 days</small>
+                              <h3 class="price">{{item.price * item.quantity | currency:constants.currency}} </h3>
+             
+                              <button ion-button clear item-end  (click)="removeItem(item)"><ion-icon name="md-close" class="color-light-grey"></ion-icon></button>
+  
+  
+              <div class="quantity-items"> 
+                    <div (click)="item.quantity = item.quantity - 1" [ngClass]="{'disable-pointer-events': item.quantity == 1}"><ion-icon name="md-remove"></ion-icon></div>
+                    <div ><span class="checkout-product-price ng-binding">{{item.quantity}}</span></div>
+                    <div  (click)="item.quantity = item.quantity + 1" [ngClass]="{'disable-pointer-events': item.quantity == 10}"><ion-icon name="md-add"></ion-icon></div>
+            </div>
+    </ion-item>
+              </ion-list>
+      </div>
+  
+          <div class="price-overview animated fadeInUpBig">
+              <div class="row">
+                  <div class="col">
+                      Subtotal:
+                  </div>
+                  <div class="col">
+                      {{getSubtotal() | currency:constants.currency}}
+                  </div>
+              </div>
+              <!--<div class="row">
+                  <div class="col">
+                      Estimated Tax:
+                  </div>
+                  <div class="col">
+                      {{calculateTax(20)}} GBP
+                  </div>
+              </div>-->
+              <div class="row">
+                  <div class="col">
+                      Shipping & Returns:
+                  </div>
+                  <div class="col color-grapefruit">
+                      FREE
+                  </div>
+              </div>
+              <div class="row total">
+                  <div class="col">
+                      Total
+                  </div>
+                  <div class="col">
+                      {{getSubtotal() | currency:constants.currency}} 
+                  </div>
+              </div>
+          </div>
+              <div class="footer-button  animated fadeInUpBig" padding>
+               <button ion-button outline block round color="dark" [disabled]="!products.length" (click)="goToCheckout()">Checkout</button>
+              </div>
+
+</ion-content>

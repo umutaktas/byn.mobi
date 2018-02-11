@@ -1,0 +1,57 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="settings">
+
+  <ion-list text-left>
+        <ion-item-group>
+          <ion-item-divider>PROFILE SETTINGS</ion-item-divider>
+          <ion-item (click)="navCtrl.push('EditProfilePage')">
+              Edit Profile
+              <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+          </ion-item>
+          <ion-item (click)="navCtrl.push('ChangePasswordPage')">
+              Change Password
+              <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+          </ion-item>
+          <ion-item>
+              <ion-label>Send push notifications</ion-label>
+              <ion-toggle checked="true" color="danger"></ion-toggle>
+            </ion-item>
+            <ion-item>
+              <ion-label>Refresh automatically</ion-label>
+              <ion-toggle checked="false" color="danger"></ion-toggle>
+            </ion-item>
+        </ion-item-group>
+
+
+        <ion-item-group>
+            <ion-item-divider>Support</ion-item-divider>
+            <ion-item >
+                About Pinro
+            </ion-item>
+            <ion-item >
+                Support
+            </ion-item>
+            <ion-item >
+                Find your shop
+            </ion-item>
+            <ion-item >
+                We’re hiring
+            </ion-item>
+
+        </ion-item-group>
+
+        <div class="footer-button">
+          <button ion-button block round color="danger">Log out</button>
+        </div>
+      </ion-list>
+
+</ion-content>

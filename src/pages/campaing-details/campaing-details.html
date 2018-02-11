@@ -1,0 +1,51 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detaylar</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <ion-label>
+      <h2>
+      Ne Kadar Harcayacaksın?
+    </h2>
+    </ion-label>
+
+    <ion-range min="300" max="2000" step="300" snaps="false" color="biyone" pin="true" [(ngModel)]="singleValue4">
+      <ion-label range-left><h4>300&#8378;</h4></ion-label>
+      <ion-label range-right><h4>2.000&#8378;</h4></ion-label>
+
+    </ion-range>
+    <p></p>
+   <ion-card>
+    <ion-card-header>
+       <span *ngIf="singleValue4>0">
+            % {{singleValue4 / 75}}
+       </span>
+        <span *ngIf="singleValue4==null">
+            % {{300/75}}
+       </span>
+    </ion-card-header>
+       <ion-card-content>
+           <p></p>
+          <span *ngIf="singleValue4==null">
+                Kazancınız: {{ 300 * (300/75)/100}} &#8378;
+          </span>
+           <span *ngIf="singleValue4!=null">
+                    Kazancınız: {{singleValue4 * (singleValue4 / 75)/100 }} &#8378;
+           </span>
+           <p> </p>
+           <p> </p>
+       </ion-card-content>
+   </ion-card>
+    <div class="footer-button animated fadeInUp">
+        <button ion-button outline block round color=biyone margin-bottom  (click)="navCtrl.push('CouponPage',{amount: singleValue4 * (singleValue4 / 75)/100 ,yuzde: singleValue4 / 75,anapara: singleValue4})">Biyone'le</button>
+    </div>
+
+
+</ion-content>

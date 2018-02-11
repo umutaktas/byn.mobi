@@ -1,0 +1,207 @@
+page-profile {
+    .platform-ios.platform-cordova {
+        .cover-photo {
+            margin-top: 20px;
+        }
+    }
+    .toolbar-title {
+        color: #6A3DB2;
+    }
+
+    .status-badge {
+        height: auto;
+        width: auto;
+        padding: 1px 8px;
+        background: #ebebeb;
+        font-size: 10px;
+        color: black;
+        text-transform: uppercase;
+        text-align: center !important;
+        border-radius: 3px;
+    }
+    
+    .profile {
+        .profile-header {
+            background: transparent;
+            border: 0px;
+        }
+    
+    
+        .profile-top-fixed{
+            position: fixed;
+        }
+    
+    .cover-photo-holder{
+        padding: 20px;
+        padding-top: 10px;
+        text-align: center;
+    
+        img{
+            border-radius: 8px;
+        }
+        h3{
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    }
+    
+        .cover-photo {
+            background: #fff;
+            height: 200px;
+            width: 100vw;
+            margin: 0px;
+            position: relative;
+            button {
+                position: absolute;
+                top: 13px;
+                left: 8px;
+                z-index: 999;
+            }
+            * {
+                color: color($colors, dark);
+                text-align: left;
+            }
+            h1 {
+                margin-bottom: 0px;
+            }
+    
+            .row{
+                position: absolute;
+                bottom: 0px;
+    
+                .profile-info {
+                    padding-left: 8px;
+                }
+                .profile-avatar{
+                    img{
+                        width: 74px;
+                    }
+                }
+    
+            }
+        }
+        .title {
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+        .row {
+            &.tab {
+                padding: 0px;
+                width: calc(100vw + 4px);
+                margin: 0px;
+                margin-left: -2px;
+                .col {
+                    padding-top: 0px;
+                    border: 2px solid color($colors, light-grey);
+                    color: color($colors, light-grey);
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    h5 {
+                        font-size: 16px;
+                        margin-bottom: 0px;
+                    }
+                    &:nth-child(2) {
+                        margin-left: -2px;
+                    }
+                }
+            }
+        }
+    
+        .order-list{
+            
+            padding-left: 15px;
+            padding-right: 15px;
+            
+    
+            .item-divider{
+                
+                font-size: 10px;
+    
+                .status-holder{
+                    text-align: right;
+                }
+            }
+    
+            .item-text-wrap, .item-divider{
+                border: 0px;
+            }
+            .item-text-wrap{
+                padding-left: 25px;
+                padding-right: 25px;
+                padding-bottom: 0px;
+            }
+    
+            .card-footer{
+                padding: 10px 20px;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-family: "montserratbold";
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    
+                .row, .col {
+                    padding: 0px;
+                }
+                button{
+                    margin: 0px;
+        text-transform: uppercase;
+        font-family: "montserratbold";
+                }
+                .price-holder{
+                        padding: 0px;
+        padding-top: 2px;
+        text-align: right;
+                }
+    
+                &.pending{
+                    background: color($colors, grapefruit);
+                    .price-holder{
+                        color: color($colors, light-grey);
+                    }
+                }
+    
+            }
+    
+    
+            .line-item{
+                border-bottom: 1px solid color($colors, light-grey);
+                margin-bottom: 10px;
+                padding-bottom: 15px;
+    
+                &:last-child{
+                    margin-bottom: 1px;
+                }
+    
+                .price{
+                    margin-top: 15px;
+                    
+                }
+            }
+    
+    
+            *{
+                text-align: left;
+            }
+            p{
+                font-size: 10px;
+            }
+            .card{
+    box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.19);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    &:first-child{
+        margin-top: 10px;
+    }
+            }
+            
+        }
+    
+        .offer-list {
+            padding: 30px;
+            img {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+}

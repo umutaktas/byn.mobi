@@ -1,0 +1,25 @@
+page-wishlist {
+    .pinro-header {
+        .bar-buttons{
+            .text-button {
+                    font-family: 'montserratsemibold';
+                    font-size: 14px;
+                
+            }
+        }
+    }
+    .product-list {
+        .list-item {
+            position: relative;
+            .checkbox {
+                background: transparent;
+                border: 0px;
+                position: absolute;
+                right: 0px;
+                top: 5px;
+                padding: 10px 16px;
+                
+            }
+        }
+    }
+}

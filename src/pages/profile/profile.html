@@ -1,0 +1,99 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="no-shadow">
+
+  <ion-navbar>
+    <ion-title>Profil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="profile">
+
+  <!-- profile -->
+  <div class="cover-photo-holder">
+
+    <ion-card *ngIf="userP.userData">
+      <ion-card-header>{{ userP.userData.username }}</ion-card-header>
+      <img [src]="userP.userData.picture" />
+      <ion-card-content>
+        <p>Email: {{ userP.userData.email }}</p>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+
+  <!-- tab  -->
+  <div class="row tab">
+    <div class="col" (click)="show = 'orders'" [ngClass]="{'color-warm-grey': show=='orders'}">
+      <h5 [ngClass]="{'color-light-grey': show=='offers'}">{{user.orders_count || 0}}</h5>
+      orders
+    </div>
+    <div class="col" (click)="show = 'offers'" [ngClass]="{'color-warm-grey': show=='offers'}">
+      <h5 [ngClass]="{'color-light-grey': show=='orders'}">{{offerPosts.length || 0}}</h5>
+      offers
+    </div>
+  </div>
+
+
+  <!-- offers -->
+  <div class="offer-list" *ngIf="show == 'offers'">
+
+    <img [src]="offer.thumbnail" *ngFor="let offer of offerPosts" width="100%">
+  </div>
+
+
+  <!-- orders -->
+
+  <div class="order-list" *ngIf="show == 'orders'">
+
+    <div *ngIf="orderList && orderList.length" padding>
+
+      
+
+      <div class="card" *ngFor="let order of orderList">
+        <div class="item item-divider" padding>
+          <div class="row">
+            <div class="col col-67">
+              <div>ORDER #{{order.number}}</div>
+            </div>
+            <div class="col text-right status-holder">
+              <span class="status-badge">{{order.status}}</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="item item-text-wrap" *ngIf="order.line_items">
+          <div class="line-item" *ngFor="let item of order.line_items">
+
+            <h3>{{item.name}}</h3>
+            <div *ngFor="let variation of item.meta" style="line-height: 0px; text-transform: uppercase;">
+              <small>{{variation.label}}: {{variation.value}}</small>
+            </div>
+            <h5 class="price">{{item.price | currency:order.currency:true}}</h5>
+          </div>
+
+
+        </div>
+        <div class="item item-divider card-footer" [ngClass]="{'pending': !order.transaction_id}">
+          <div class="row">
+            <div class="col">
+              <button ion-button small clear block color="light" class=" button-text" *ngIf="!order.transaction_id">Pay Now</button>
+            </div>
+            <div class="col price-holder">
+              Total {{order.total | currency:order.currency:true}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,101 @@
+page-cart {
+
+    .cart-list {
+        padding-left: 20px;
+        padding-right: 20px;
+        * {
+            text-align: left !important;
+        }
+        ion-item {
+            border: 0px;
+            border-bottom: 2px solid color($colors, light-grey);
+            min-height: 140px;
+            padding-top: 14px;
+            padding-bottom: 10px;
+            &:last-child {
+                border-bottom: 3px solid color($colors, light-grey);
+            }
+            .item-inner{
+                border-bottom: 0px !important;
+                .item-button{
+                    font-size: 32px;
+                    padding-right: 0px;
+                }
+            }
+            h5 {
+                font-size: 14px;
+            }
+            h3 {
+                font-size: 18px;
+                
+            }
+
+            ion-thumbnail{
+                img {
+                    &:first-child {
+                        max-height: none;
+                        height: auto;
+                        width: 100%;
+                        max-width: 80px;
+                    }
+                }
+            }
+            small {
+                display: block;
+                color: color($colors, warm-grey);
+            }
+            .price {
+                margin-bottom: 0px;
+                margin-top: 5px;
+            }
+
+            .quantity-items{
+                margin-top: 10px;
+                div{
+                    display: inline-block;
+                    margin-right: 15px;
+
+                    ion-icon{
+                        font-size: 16px;
+                        padding: 5px;
+                        color: color($colors, warm-grey);
+                    }
+                }
+            }
+        }
+    }
+    .price-overview {
+        padding-top: 30px;
+        text-align: left;
+        font-size: 14px;
+        font-family: Verdana;
+        .footer-button {
+            margin-top: 20px;
+        }
+        .row {
+            padding-left: 20px;
+            padding-right: 20px;
+            .col {
+                &:nth-child(2) {
+                    text-align: right;
+                    font-family: Verdana;
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+            }
+            &.total {
+                font-family: Verdana;
+                font-weight: bold;
+                border-top: 2px solid color($colors, light-grey);
+                padding-top: 10px;
+                text-transform: uppercase;
+                line-height: 40px;
+                .col {
+                    &:nth-child(2) {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+page-product-by-category {
+
+    .scroll-content{
+
+        .toolbar{
+            padding: 0px;
+            border-bottom: 1px solid color($colors, light-grey);
+
+            .toolbar-content{
+                .bar-buttons{
+                    button{
+                        height: 44px;
+                        font-family: 'montserratbold';
+                        font-size: 13px;
+                        border-radius: 0px;
+                        text-transform: uppercase;
+                        &:first-child, &:nth-child(2){
+                            width: 30%;
+                            border-right: 1px solid color($colors, light-grey);
+                        }
+                        &:nth-child(3), &:nth-child(4){
+                            width: 18%;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,46 @@
+<ion-content class="login">
+
+
+  <div class="header animated fadeInDown">
+    <img src="assets/img/biyone-logo.jpg" width="280px">
+
+  </div>
+
+
+  <form name="loginForm" #loginForm="ngForm" autocomplete="false">
+    <div class="signin-input-holder animated fadeInRight">
+
+      <ion-list>
+        <ion-item>
+         <ion-label color="biyone" floating>E-Mail</ion-label>
+          <ion-input name="username" minlength="6" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="biyone" floating>Şifre</ion-label>
+          <ion-input type="password"  name="password" minlength="6" required></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <h5 class="regular-font animated fadeIn" (click)="navCtrl.push('ForgotPasswordPage')">Şifremi Unuttum</h5>
+
+
+      <div class="footer-button animated fadeInUp">
+          
+    
+          <button ion-button outline block round color=biyone margin-bottom  (click)="skipLogin()">Giriş</button>
+
+         <button ion-button outline block round (click)="loginfb()"> <ion-icon name="logo-facebook">Facebok ile bağlan</ion-icon></button>
+
+        <h5 class="light-font color-black"  (click)="navCtrl.push('SignupPage')">Üye Değil misiniz? <span class="semibold-font">Kayıt</span></h5>
+    
+        <p class="padding light-font color-warm-grey">Gizlilik Politikası</p>
+        </div>
+
+    </div>
+
+
+  </form>
+
+
+</ion-content>

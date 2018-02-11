@@ -1,0 +1,95 @@
+<!--
+  Generated template for the ProductDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{product.categories[0].name}}</ion-title>
+
+    <ion-buttons end>
+        <button ion-button button-clear icon-only class=" button-cart button-clear" (click)="navCtrl.push('CartPage')">
+            <i><img src="assets/img/icons/cart-icon-dark.png" width="24px"></i>
+            <div class="shopping-cart">
+            <span class="badge badge-assertive header-badge"></span>
+            </div></button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!-- slider -->
+    <div class="slider-holder">
+        <ion-slides pager>
+          <ion-slide *ngFor="let image of product.images">
+            <img [src]="image.src">
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+      <!-- product info -->
+      <div class="animated pulse">
+          <h1 class="regular-font">{{product.name}}</h1>
+          <h5 class="color-warm-grey regular-font">{{product.categories[0].name}}</h5>
+          <h3>{{selectedProduct.price | currency:constants.currency}}</h3>
+        </div>
+
+        <div class="product-description">
+          <!-- description -->
+            <div class="section">
+              <h5>Product Description</h5>
+              <div class="color-warm-grey" [innerHTML]="product.description"></div>
+            </div>
+
+          <!-- variation selection -->
+
+      <form name="productSelectionForm" #productSelectionForm='ngForm' autocomplete="false">
+          <!-- color -->
+          <div class="section" *ngIf="product.attributes.length">
+              <ul class="option-radio">
+                <li *ngFor="let attribute of product.attributes[0].options">
+                  <label>
+                              <input type="radio" name="color" [(ngModel)]="selectedProduct.color" [value]="attribute" required>
+                              <div class="with-color" [ngStyle]="{'background': '' + attribute}">
+                              </div>
+                          </label>
+                </li>
+                
+              </ul>
+          </div>
+
+          <!-- size -->
+          <div class="section" text-center *ngIf="product.attributes.length > 1">
+              <ul class="option-radio">
+                <li *ngFor="let attribute of product.attributes[1].options">
+                  <label>
+                              <input type="radio" name="size" [(ngModel)]="selectedProduct.size" [value]="attribute" required>
+                              <div class="with-text" >
+                                  <span>{{attribute}}</span>
+                                </div>
+                          </label>
+                </li>
+                
+              </ul>
+          </div>
+
+          <!--footer button-->
+		<div margin-top>
+        <button ion-button block round color="dark" (click)="addToCart(selectedProduct)" [disabled]="productSelectionForm && !productSelectionForm.form.valid">
+    {{addToCartButtonText}}
+  </button>
+        <button margin-top ion-button block round outline color="dark" (click)="addToWishList(selectedProduct)" [disabled]="productSelectionForm && !productSelectionForm.form.valid">
+    {{wishListButtonText}}
+  </button>
+      </div>
+
+
+          </form>
+
+        </div>
+</ion-content>

@@ -1,0 +1,70 @@
+page-coupons {
+  .toolbar-title {
+    color: #6A3DB2;
+  }
+
+  min-height: 250px;
+  border-color: color($colors, lighter) !important;
+
+  &:first-child {
+    border-top-width: 0px !important;
+    .item-inner {
+      border-color: color($colors, lighter) !important;
+    }
+  }
+
+  .item-inner {
+    padding: 16px;
+  }
+
+  img {
+    width: 100%;
+  }
+  p {
+    color: #878787;
+  }
+  h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: Verdana;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #6A3DB2;
+  }
+  h4 {
+    font-family: Verdana;
+    color: #ebebeb;
+    background-color: #33cd5f;
+  }
+  h2 {
+    font-family: Verdana;
+    color: #ebebeb;
+    background-color: #33cd5f;
+  }
+
+  h5 {
+    color: #6A3DB2;
+  }
+  .product-image {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    height: 200px;
+    background-position: center !important;
+  }
+  .card-header {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 25px;
+    color: #ebebeb;
+    background-color: #33cd5f;
+  }
+  .card-content {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 25px;
+    color: #ebebeb;
+    background-color: #33cd5f;
+
+  }
+}
