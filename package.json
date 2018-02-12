@@ -31,6 +31,7 @@
     "@types/node-sass": "^3.10.32",
     "angularfire2": "^5.0.0-rc.6",
     "cordova-android": "6.2.3",
+    "cordova-ios": "^4.5.4",
     "cordova-plugin-browsertab": "^0.2.0",
     "cordova-plugin-buildinfo": "^2.0.1",
     "cordova-plugin-compat": "^1.2.0",
@@ -83,7 +84,8 @@
       }
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

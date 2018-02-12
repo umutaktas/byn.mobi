@@ -4,7 +4,6 @@ import { HomePage } from '../home/home'
 import {MyFirebase} from "../../providers/my-firebase/my-firebase";
 
 
-
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -12,15 +11,13 @@ import {MyFirebase} from "../../providers/my-firebase/my-firebase";
 })
 export class LoginPage {
 
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-              private myFirebase: MyFirebase  )
-  {
+  constructor(private navCtrl: NavController,
+              private navParams: NavParams,
+              private myFirebase: MyFirebase)  {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+
   }
 
    loginfb() {

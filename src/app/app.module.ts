@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {MyFirebase} from '../providers/my-firebase/my-firebase';
 import {Facebook} from "@ionic-native/facebook";
+import { LoginWithMailComponent } from '../pages/login-with-mail/login-with-mail';
 
 export const firebaseConfig = ({
     apiKey: "AIzaSyADXJ2n3IJd5Ax8rpWXG8q3-YTyuMyA7ow",
@@ -27,7 +28,8 @@ export const firebaseConfig = ({
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginWithMailComponent
   ],
   imports: [
     BrowserModule,

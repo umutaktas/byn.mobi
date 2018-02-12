@@ -101,4 +101,5 @@
         <variable name="APP_NAME" value="Biyone" />
     </plugin>
     <engine name="android" spec="~6.2.3" />
+    <engine name="ios" spec="~4.5.4" />
 </widget>
