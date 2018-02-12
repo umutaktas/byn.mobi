@@ -1,13 +1,13 @@
 webpackJsonp([11],{
 
-/***/ 491:
+/***/ 492:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(511);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,14 +41,14 @@ LoginPageModule = __decorate([
 
 /***/ }),
 
-/***/ 510:
+/***/ 511:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_my_firebase_my_firebase__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_my_firebase_my_firebase__ = __webpack_require__(308);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -87,7 +87,8 @@ LoginPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-login',template:/*ion-inline-start:"C:\byn.mobi\src\pages\login\login.html"*/'<ion-content class="login">\n\n\n\n\n\n  <div class="header animated fadeInDown">\n\n    <img src="assets/img/biyone-logo.jpg" width="280px">\n\n\n\n  </div>\n\n\n\n\n\n  <form name="loginForm" #loginForm="ngForm" autocomplete="false">\n\n    <div class="signin-input-holder animated fadeInRight">\n\n\n\n      <ion-list>\n\n        <ion-item>\n\n         <ion-label color="biyone" floating>E-Mail</ion-label>\n\n          <ion-input name="username" minlength="6" required></ion-input>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label color="biyone" floating>Şifre</ion-label>\n\n          <ion-input type="password"  name="password" minlength="6" required></ion-input>\n\n        </ion-item>\n\n\n\n      </ion-list>\n\n\n\n      <h5 class="regular-font animated fadeIn" (click)="navCtrl.push(\'ForgotPasswordPage\')">Şifremi Unuttum</h5>\n\n\n\n\n\n      <div class="footer-button animated fadeInUp">\n\n          \n\n    \n\n          <button ion-button outline block round color=biyone margin-bottom  (click)="skipLogin()">Giriş</button>\n\n\n\n         <button ion-button outline block round (click)="loginfb()"> <ion-icon name="logo-facebook">Facebok ile bağlan</ion-icon></button>\n\n\n\n        <h5 class="light-font color-black"  (click)="navCtrl.push(\'SignupPage\')">Üye Değil misiniz? <span class="semibold-font">Kayıt</span></h5>\n\n    \n\n        <p class="padding light-font color-warm-grey">Gizlilik Politikası</p>\n\n        </div>\n\n\n\n    </div>\n\n\n\n\n\n  </form>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\byn.mobi\src\pages\login\login.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_my_firebase_my_firebase__["a" /* MyFirebase */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_my_firebase_my_firebase__["a" /* MyFirebase */]])
 ], LoginPage);
 
 //# sourceMappingURL=login.js.map

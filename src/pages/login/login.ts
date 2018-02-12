@@ -14,7 +14,8 @@ export class LoginPage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private myFirebase: MyFirebase  )
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private myFirebase: MyFirebase  )
   {
   }
 

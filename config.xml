@@ -96,4 +96,9 @@
         <variable name="ANDROID_HOST" value=" " />
         <variable name="ANDROID_PATHPREFIX" value="/" />
     </plugin>
+    <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
+        <variable name="APP_ID" value="100360027395906" />
+        <variable name="APP_NAME" value="Biyone" />
+    </plugin>
+    <engine name="android" spec="~6.2.3" />
 </widget>
