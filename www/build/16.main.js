@@ -1,13 +1,13 @@
 webpackJsonp([16],{
 
-/***/ 438:
+/***/ 486:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__change_password__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__change_password__ = __webpack_require__(505);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangePasswordPageModule", function() { return ChangePasswordPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,12 +41,12 @@ ChangePasswordPageModule = __decorate([
 
 /***/ }),
 
-/***/ 457:
+/***/ 505:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(83);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChangePasswordPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -83,7 +83,7 @@ var ChangePasswordPage = (function () {
 ChangePasswordPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
-        selector: 'page-change-password',template:/*ion-inline-start:"/Users/umutaktas/biyone/dev/biyone.mobi/src/pages/change-password/change-password.html"*/'<!--\n  Generated template for the ChangePasswordPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="settings">\n    <ion-list text-left>\n        <form name="changePasswordForm" #changePasswordForm=\'ngForm\' autocomplete="false">\n        <ion-item-group>\n          <ion-item-divider>Change password</ion-item-divider>\n          <ion-item>\n              <ion-label >New</ion-label>\n              <ion-input type="password" [(ngModel)]="user.password" name="password" minlength="8" placeholder="Min 8 char" required></ion-input>\n          </ion-item>\n          <ion-item [ngClass]="{\'has-errors\': !reentry.pristine && user.password && user.password != user.reentry}">\n              <ion-label >Retype</ion-label>\n              <ion-input type="password" [(ngModel)]="user.reentry" name="reentry" placeholder="Re-enter" #reentry=\'ngModel\' required></ion-input>\n          </ion-item>\n          </ion-item-group>\n          <div class="footer-button">\n            <button ion-button outline round block color="dark" [disabled]="!changePasswordForm || !changePasswordForm.form.valid || (user.password != user.reentry)" (click)="saveChanges(user)">Save Changes</button>\n          </div>\n          </form>\n    </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/umutaktas/biyone/dev/biyone.mobi/src/pages/change-password/change-password.html"*/,
+        selector: 'page-change-password',template:/*ion-inline-start:"C:\byn.mobi\src\pages\change-password\change-password.html"*/'<!--\n\n  Generated template for the ChangePasswordPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Settings</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="settings">\n\n    <ion-list text-left>\n\n        <form name="changePasswordForm" #changePasswordForm=\'ngForm\' autocomplete="false">\n\n        <ion-item-group>\n\n          <ion-item-divider>Change password</ion-item-divider>\n\n          <ion-item>\n\n              <ion-label >New</ion-label>\n\n              <ion-input type="password" [(ngModel)]="user.password" name="password" minlength="8" placeholder="Min 8 char" required></ion-input>\n\n          </ion-item>\n\n          <ion-item [ngClass]="{\'has-errors\': !reentry.pristine && user.password && user.password != user.reentry}">\n\n              <ion-label >Retype</ion-label>\n\n              <ion-input type="password" [(ngModel)]="user.reentry" name="reentry" placeholder="Re-enter" #reentry=\'ngModel\' required></ion-input>\n\n          </ion-item>\n\n          </ion-item-group>\n\n          <div class="footer-button">\n\n            <button ion-button outline round block color="dark" [disabled]="!changePasswordForm || !changePasswordForm.form.valid || (user.password != user.reentry)" (click)="saveChanges(user)">Save Changes</button>\n\n          </div>\n\n          </form>\n\n    </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\byn.mobi\src\pages\change-password\change-password.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], ChangePasswordPage);

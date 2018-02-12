@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 448:
+/***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_by_category__ = __webpack_require__(467);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_order_by_order_by__ = __webpack_require__(474);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_by_category__ = __webpack_require__(515);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_order_by_order_by__ = __webpack_require__(522);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductByCategoryPageModule", function() { return ProductByCategoryPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44,13 +44,13 @@ ProductByCategoryPageModule = __decorate([
 
 /***/ }),
 
-/***/ 467:
+/***/ 515:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_constants__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_constants__ = __webpack_require__(305);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductByCategoryPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -116,7 +116,7 @@ var ProductByCategoryPage = (function () {
 ProductByCategoryPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
-        selector: 'page-product-by-category',template:/*ion-inline-start:"/Users/umutaktas/biyone/dev/biyone.mobi/src/pages/product-by-category/product-by-category.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle color="dark">\n      <ion-icon name="md-menu"></ion-icon>\n    </button>\n    <ion-title>Knitwear</ion-title>\n    <ion-buttons end>\n        <button ion-button clear icon-only class="button button-cart"  (click)="navCtrl.push(\'CartPage\')">\n            <i><img src="assets/img/icons/cart-icon-dark.png" width="24px"></i>\n            <div class="shopping-cart">\n            <span class="badge badge-assertive header-badge"></span>\n            </div></button>\n        </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n    <ion-toolbar>\n  <ion-buttons>\n      <button ion-button (click)="sort(\'name\'); scrollToTop()" [color]=" order==\'name\' ? \'dark\' : \'warm-grey\'">name</button>\n      <button ion-button (click)="sort(\'price\'); scrollToTop()" [color]=" order==\'price\' ? \'dark\' : \'warm-grey\'">price</button>\n      <button ion-button icon-only (click)="layout = \'list\'; scrollToTop()" [color]="layout==\'list\' ? \'grapefruit\' : \'warm-grey\'"><ion-icon name="ios-list-box-outline"></ion-icon></button>\n      <button ion-button icon-only (click)="layout = \'grid\'; scrollToTop()" [color]="layout==\'grid\' ? \'grapefruit\' : \'warm-grey\'"><ion-icon name="ios-apps-outline"></ion-icon></button>\n  </ion-buttons>\n  </ion-toolbar>\n  \n\n        <!-- product list -->\n        <div class="product-list animated fadeInUp" [ngClass]="{\'list-view\': layout && layout==\'list\'}" >\n          <ul>\n            <li class="list-item" *ngFor="let item of products | orderBy: {property: order, direction: direction}" (click)="navCtrl.push(\'ProductDetailsPage\', {product_id: item.id})">\n              <div class="product-image" [ngStyle]="{\'background-image\': \'url(\' + item.images[0].src + \')\', \'background-size\':\'cover\'}">\n              </div>\n              <h5>{{item.name}}</h5>\n              <small class="category-name">{{item.categories[0].name}}</small>\n              <small class="price">{{item.price | currency:constants.currency}}</small>\n            </li>\n          </ul>\n        </div>\n\n\n  \n</ion-content>\n'/*ion-inline-end:"/Users/umutaktas/biyone/dev/biyone.mobi/src/pages/product-by-category/product-by-category.html"*/,
+        selector: 'page-product-by-category',template:/*ion-inline-start:"C:\byn.mobi\src\pages\product-by-category\product-by-category.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle color="dark">\n\n      <ion-icon name="md-menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Knitwear</ion-title>\n\n    <ion-buttons end>\n\n        <button ion-button clear icon-only class="button button-cart"  (click)="navCtrl.push(\'CartPage\')">\n\n            <i><img src="assets/img/icons/cart-icon-dark.png" width="24px"></i>\n\n            <div class="shopping-cart">\n\n            <span class="badge badge-assertive header-badge"></span>\n\n            </div></button>\n\n        </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n    <ion-toolbar>\n\n  <ion-buttons>\n\n      <button ion-button (click)="sort(\'name\'); scrollToTop()" [color]=" order==\'name\' ? \'dark\' : \'warm-grey\'">name</button>\n\n      <button ion-button (click)="sort(\'price\'); scrollToTop()" [color]=" order==\'price\' ? \'dark\' : \'warm-grey\'">price</button>\n\n      <button ion-button icon-only (click)="layout = \'list\'; scrollToTop()" [color]="layout==\'list\' ? \'grapefruit\' : \'warm-grey\'"><ion-icon name="ios-list-box-outline"></ion-icon></button>\n\n      <button ion-button icon-only (click)="layout = \'grid\'; scrollToTop()" [color]="layout==\'grid\' ? \'grapefruit\' : \'warm-grey\'"><ion-icon name="ios-apps-outline"></ion-icon></button>\n\n  </ion-buttons>\n\n  </ion-toolbar>\n\n  \n\n\n\n        <!-- product list -->\n\n        <div class="product-list animated fadeInUp" [ngClass]="{\'list-view\': layout && layout==\'list\'}" >\n\n          <ul>\n\n            <li class="list-item" *ngFor="let item of products | orderBy: {property: order, direction: direction}" (click)="navCtrl.push(\'ProductDetailsPage\', {product_id: item.id})">\n\n              <div class="product-image" [ngStyle]="{\'background-image\': \'url(\' + item.images[0].src + \')\', \'background-size\':\'cover\'}">\n\n              </div>\n\n              <h5>{{item.name}}</h5>\n\n              <small class="category-name">{{item.categories[0].name}}</small>\n\n              <small class="price">{{item.price | currency:constants.currency}}</small>\n\n            </li>\n\n          </ul>\n\n        </div>\n\n\n\n\n\n  \n\n</ion-content>\n\n'/*ion-inline-end:"C:\byn.mobi\src\pages\product-by-category\product-by-category.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], ProductByCategoryPage);
@@ -125,7 +125,7 @@ ProductByCategoryPage = __decorate([
 
 /***/ }),
 
-/***/ 474:
+/***/ 522:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
