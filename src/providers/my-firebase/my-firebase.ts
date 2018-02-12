@@ -9,8 +9,7 @@ import * as firebase from "firebase";
 export class MyFirebase {
 
   constructor(private dbFire: AngularFireDatabase,
-              private  authFire: AngularFireAuth,
-              private router: Router) {
+              private  authFire: AngularFireAuth) {
 
   }
 
@@ -40,7 +39,6 @@ export class MyFirebase {
     signOut() {
         this.authFire.auth.signOut().then(() => {
             localStorage.removeItem('isLoggedin');
-            this.router.navigate(['/']);
         });
     }
 

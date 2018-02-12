@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home'
-import {UserDataProvider} from "../../providers/user-data/user-data";
+import {MyFirebase} from "../../providers/my-firebase/my-firebase";
+
 
 
 @IonicPage()
@@ -13,7 +14,7 @@ export class LoginPage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private userdataProvider: UserDataProvider )
+  constructor(public navCtrl: NavController, public navParams: NavParams, private myFirebase: MyFirebase  )
   {
   }
 
@@ -22,7 +23,9 @@ export class LoginPage {
   }
 
    loginfb() {
-      this.userdataProvider.loginWithFB();
+      this.myFirebase.facebookLogin().then(user => {
+        console.log(user)
+      })
   }
 
 
