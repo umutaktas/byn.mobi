@@ -1,15 +1,23 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title><div class="biyone-color">Üye Olun</div> </ion-title>
+    </ion-navbar>
+</ion-header>
 <ion-content class="login">
 <form name="loginForm" #loginForm="ngForm" autocomplete="false">
     <div class="signin-input-holder animated fadeInRight">
         <ion-list>
             <ion-item>
-                <ion-label color="biyone" floating>E-Mail</ion-label>
-                <ion-input name="username" minlength="6" required></ion-input>
+                <ion-input type="text" [(ngModel)]="user.name" name="name"  email placeholder="AD" required></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label color="biyone" floating>Şifre</ion-label>
-                <ion-input type="password"  name="password" minlength="6" required></ion-input>
+                <ion-input type="text" [(ngModel)]="user.surname" name="surname"  email placeholder="SOYAD" required></ion-input>
             </ion-item>
+            <ion-item>
+
+                <ion-datetime displayFormat="DD.MM.YYYY" [(ngModel)]="user.birthDate" name="myDate" laceholder="DOĞUM TARİHİ"></ion-datetime>
+            </ion-item>
+
         </ion-list>
         <h5 class="regular-font animated fadeIn" (click)="navCtrl.push('ForgotPasswordPage')">Şifremi Unuttum</h5>
 

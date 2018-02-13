@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import {IonicPage} from "ionic-angular";
+import {Component} from '@angular/core';
 import {MyFirebase} from "../../providers/my-firebase/my-firebase";
+
 
 /**
  * Generated class for the LoginWithMailComponent component.
@@ -14,12 +14,13 @@ import {MyFirebase} from "../../providers/my-firebase/my-firebase";
   templateUrl: 'login-with-mail.html',
 })
 export class LoginWithMail {
+  user: any={};
 
   text: string;
 
   constructor(private myFirebase:MyFirebase) {
-    console.log('Hello LoginWithMailComponent Component');
-    this.text = 'Hello World';
+
   }
+
 
 }

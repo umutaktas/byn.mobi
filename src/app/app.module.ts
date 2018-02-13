@@ -14,8 +14,8 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {MyFirebase} from '../providers/my-firebase/my-firebase';
 import {Facebook} from "@ionic-native/facebook";
-import {LoginWithMail} from "../pages/login-with-mail/login-with-mail";
 import {LoginWithMailModule} from "../pages/login-with-mail/login-with-mail.module";
+
 
 
 export const firebaseConfig = ({
@@ -42,7 +42,7 @@ export const firebaseConfig = ({
     AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp, {
       backButtonText: ''
-    }),
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
