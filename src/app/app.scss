@@ -96,6 +96,9 @@ Helper
     font-family: Verdana;
     font-weight: 100;
 }
+.biyone-color {
+  color: #6A3DB2;
+}
 
 .regular-font {
     font-family: Verdana;
@@ -150,6 +153,20 @@ Helper
     width:100%;
     color:#6A3DB2;
   }
+    .centered {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -100px;
+      .h5 {
+        font-family: Verdana;
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 30px;
+      }
+
+    }
 
   background: url(../assets/img/ny.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;

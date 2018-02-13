@@ -16,11 +16,6 @@ export class MyFirebase {
   }
   userData:any = null;
 
-    googleLogin() {
-        const provider = new firebase.auth.GoogleAuthProvider();
-        return this.oAuthLogin(provider);
-    }
-
     facebookLogin() {
         this.face.login(['email','public_profile']).then((responce:FacebookLoginResponse)=> {
             this.face.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)',[]).then(profile => {
@@ -28,6 +23,14 @@ export class MyFirebase {
             })
         })
         return this.userData;
+    }
+
+    emailLogin() {
+
+    }
+
+    private saveUser(){
+
     }
 
 

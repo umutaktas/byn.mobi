@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import { IonicModule } from 'ionic-angular';
-import { LoginWithMailComponent } from './login-with-mail';
+import { IonicPageModule} from 'ionic-angular';
+import { LoginWithMail } from './login-with-mail';
 
 @NgModule({
   declarations: [
-    LoginWithMailComponent,
+    LoginWithMail,
   ],
   imports: [
-    IonicModule,
+    IonicPageModule.forChild(LoginWithMail)
   ],
   exports: [
-    LoginWithMailComponent
+    LoginWithMail
   ]
 })
-export class LoginWithMailComponentModule {}
+export class LoginWithMailModule {}

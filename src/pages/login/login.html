@@ -2,9 +2,11 @@
   <div class="header animated fadeInDownBig">
     <img src="assets/img/biyone_logo.png" width="280px">
   </div>
-
+    <div class="centered">
+        <h5 class="light-font biyone-color" (click)="navCtrl.push('SignupPage')">Üye Değil misiniz? <span class="semibold-font">Kayıt</span></h5>
+    </div>
 <div class="foot-button animated fadeInUp">
     <button ion-button icon-left  round  color="default" (click)="loginfb()"> <ion-icon name="logo-facebook"></ion-icon>ÜYE OLUN</button>
-    <button ion-button icon-right round  color="light" (click)="loginfb()"> <ion-icon name="md-mail"></ion-icon>ÜYE OLUN</button>
+    <button ion-button icon-right round  color="light" (click)="loginWithMail()"> <ion-icon name="md-mail"></ion-icon>ÜYE OLUN</button>
 </div>
 </ion-content>

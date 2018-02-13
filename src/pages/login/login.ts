@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home'
 import {MyFirebase} from "../../providers/my-firebase/my-firebase";
+import {LoginWithMail} from "../login-with-mail/login-with-mail";
 
 
 @IonicPage()
@@ -24,6 +25,10 @@ export class LoginPage {
       this.myFirebase.facebookLogin().then(user => {
         console.log(user)
       })
+  }
+
+  loginWithMail() {
+      this.navCtrl.push(LoginWithMail)
   }
 
 
