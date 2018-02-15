@@ -5,8 +5,11 @@
 </ion-header>
 <ion-content class="login">
 <form name="loginForm" #loginForm="ngForm" autocomplete="false">
-    <div class="signin-input-holder animated fadeInRight">
+    <div class="settings animated fadeInRight">
         <ion-list>
+            <ion-card>
+                <div class="userImage"></div>
+            </ion-card>
             <ion-item>
                 <ion-input type="text" [(ngModel)]="user.name" name="name"  email placeholder="AD" required></ion-input>
             </ion-item>
@@ -15,7 +18,7 @@
             </ion-item>
             <ion-item>
 
-                <ion-datetime displayFormat="DD.MM.YYYY" [(ngModel)]="user.birthDate" name="myDate" laceholder="DOĞUM TARİHİ"></ion-datetime>
+                <ion-datetime displayFormat="DD.MM.YYYY" [(ngModel)]="user.birthDate" name="myDate" placeholder="DOĞUM TARİHİ"></ion-datetime>
             </ion-item>
 
         </ion-list>

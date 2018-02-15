@@ -20,6 +20,7 @@ export class MyFirebase {
         this.face.login(['email','public_profile']).then((responce:FacebookLoginResponse)=> {
             this.face.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)',[]).then(profile => {
                 this.userData = {email: profile['email'],first_name: profile['first_name'], picture_large:profile['picture_large']['data']['url'],username: profile['name'] };
+                this.saveUser(this.userData);
             })
         })
         return this.userData;
@@ -29,9 +30,16 @@ export class MyFirebase {
 
     }
 
-    private saveUser(){
-
+    private saveUser(userData){
+        let result = null;
+        this.dbFire.list('mobileUsers/').push(userData).then( res => {
+            result = res
+          });
+        return result;
     }
+
+
+
 
 
     private oAuthLogin(provider: firebase.auth.AuthProvider) {
