@@ -18,12 +18,15 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
+    //  if (this.myFirebase.authFire.auth.)
 
   }
 
    loginfb() {
       this.myFirebase.facebookLogin().then(user => {
-        console.log(user)
+        if (user != null) {
+            this.navCtrl.setRoot(HomePage)
+        }
       })
   }
 

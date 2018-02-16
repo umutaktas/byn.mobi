@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { Constants } from '../../shared/constants'
-
-import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+import {MyFirebase} from "../../providers/my-firebase/my-firebase";
 
 @Component({
   selector: 'page-home',
@@ -18,7 +17,7 @@ export class HomePage {
   latestProducts:  Observable<any[]>;
   constants: any;
 
-  constructor(public navCtrl: NavController ,afDB: AngularFireDatabase) {
+  constructor(public navCtrl: NavController , private myFirebase: MyFirebase) {
 
     this.offerImgSrc = "assets/img/bann" +
         "" +
@@ -42,44 +41,12 @@ export class HomePage {
       }
     ];
 
-    this.latestProducts = afDB.list('latestProducts').valueChanges();
-
-
-    /*
-
-    this.latestProducts = [
-      {
-        id: 81,
-        name: "Adil IŞIK",
-        categories: [{name: "Editorial"}],
-        desc: "Adil Işık İndiriminiz Sizi Bekliyor. Hemen Tıklayın!",
-        images: [{src: "assets/img/firms/adilisik.jpg"}]
-      },
-      {
-        id: 82,
-        name: "Kiğılı",
-        categories: [{name: "Editorial"}],
-        desc: "Kiğılı ile Kaliteyi Keşfet. Hemen İndirimini Al",
-        images: [{src: "assets/img/firms/kigili.png"}]
-      },
-      {
-        id: 83,
-        name: "Mavi Jeans",
-        categories: [{name: "Editorial"}],
-        desc: "Çok mu Çok Oluyoruz. İnidirimi Hemen Al",
-        images: [{src: "assets/img/firms/mavi.png"}]
-      },
-      {
-        id: 84,
-        name: "Zara",
-        categories: [{name: "Editorial"}],
-        desc: "Zara'da Işıltı ve Zerafet Var. İndirimin Seni Bekliyor.",
-        images: [{src: "assets/img/firms/zara.png"}]
-      }
-    ]
-    */
 
   }
+
+    ionViewDidLoad() {
+
+    }
 
 
 

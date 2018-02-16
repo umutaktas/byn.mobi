@@ -10,7 +10,7 @@ import {Facebook, FacebookLoginResponse} from "@ionic-native/facebook";
 export class MyFirebase {
 
   constructor(private dbFire: AngularFireDatabase,
-              private  authFire: AngularFireAuth,
+              public  authFire: AngularFireAuth,
               private face: Facebook) {
 
   }
