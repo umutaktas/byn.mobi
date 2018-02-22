@@ -19,34 +19,15 @@ export class HomePage {
 
   constructor(public navCtrl: NavController , private myFirebase: MyFirebase) {
 
-    this.offerImgSrc = "assets/img/bann" +
-        "" +
-        "er-white.jpg"
-    this.constants = Constants
-
-    this.featuredProducts = [
-      {
-        id: 61,
-        name: "Ice Seal Humor Santiago",
-        categories: [{name: "Editorial"}],
-        price: 20,
-        images: [{src: "assets/img/products/cat-image-1.png"}]
-      },
-      {
-        id: 62,
-        name: "Grabber Grey Cardigan Button Up &rarr; Floral Sating Top and Brown Pants",
-        categories: [{name: "Editorial"}],
-        price: 18,
-        images: [{src: "assets/img/products/cat-image-2.png"}]
-      }
-    ];
-
-
+      this.latestProducts = this.myFirebase.getAllDiscounts().valueChanges()
   }
 
     ionViewDidLoad() {
 
+
     }
+
+
 
 
 

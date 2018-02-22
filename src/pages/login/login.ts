@@ -17,21 +17,22 @@ export class LoginPage {
               private myFirebase: MyFirebase)  {
   }
 
-  ionViewDidLoad() {
-    //  if (this.myFirebase.authFire.auth.)
+  userData : any = {};
 
+  ionViewDidLoad() {
   }
 
    loginfb() {
-      this.myFirebase.facebookLogin().then(user => {
-        if (user != null) {
-            this.navCtrl.setRoot(HomePage)
-        }
-      })
+      this.myFirebase.facebookLogin().then(() =>
+          this.skipLogin()
+      )
+
+
   }
 
   loginWithMail() {
-      this.navCtrl.push(LoginWithMail)
+     // this.navCtrl.push(LoginWithMail)
+      this.myFirebase.signOut()
   }
 
 

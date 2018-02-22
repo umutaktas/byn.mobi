@@ -4,9 +4,7 @@
         <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header> -->
-
     <ion-content>
-
         <div class="menu-header animated fadeInDown">
             <img src="assets/img/biyone-logo.jpg" width="200px">
         </div>
@@ -17,7 +15,6 @@
                     {{p.title}}
                 </button>
                 <button ion-item class="icon-right" menuClose (click)="openCustomPage('CouponsPage')">
-
 
                     <img src="assets/img/icons/user_icon_light.png" item-end>
 
@@ -43,4 +40,7 @@
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false">
+
+</ion-nav>

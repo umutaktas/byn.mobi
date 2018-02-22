@@ -4,42 +4,70 @@ import {AngularFireDatabase} from "angularfire2/database";
 import {AngularFireAuth} from "angularfire2/auth";
 import * as firebase from "firebase";
 import {Facebook, FacebookLoginResponse} from "@ionic-native/facebook";
+import {NativeStorage} from "@ionic-native/native-storage";
+
+
 
 
 @Injectable()
 export class MyFirebase {
 
+    public fbProfile: any
+
   constructor(private dbFire: AngularFireDatabase,
-              public  authFire: AngularFireAuth,
-              private face: Facebook) {
+              private  authFire: AngularFireAuth,
+              private face: Facebook,
+              private storage: NativeStorage) {
 
   }
-  userData:any = null;
 
-    facebookLogin() {
-        this.face.login(['email','public_profile']).then((responce:FacebookLoginResponse)=> {
-            this.face.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)',[]).then(profile => {
-                this.userData = {email: profile['email'],first_name: profile['first_name'], picture_large:profile['picture_large']['data']['url'],username: profile['name'] };
-                this.saveUser(this.userData);
-            })
+
+
+    facebookLogin(): Promise<any>  {
+        return this.face.login(['email'])
+            .then(response => {
+                const credantial = firebase.auth.FacebookAuthProvider.credential(response.authResponse.accessToken);
+                this.authFire.auth.signInWithCredential(credantial)
+                    .then(success => {
+                        this.face.api('me?fields=id,name,email,picture.width(720).height(720).as(picture_large)', [])
+                            .then(profile => {
+                                const userData = {
+                                    uid: success.uid,
+                                    email: profile['email'],
+                                    picture_large: profile['picture_large']['data']['url'],
+                                    username: profile['name'],
+                                    method: 'Facebook'
+                                };
+                                this.saveUser(userData).then(() =>
+                                console.log('saved'))
+                            })
+                    })
+        }).catch((err) => {
+            console.log(err)
         })
-        return this.userData;
     }
 
     emailLogin() {
+        // TODO: Email
+    }
+
+    private saveUser(userData) {
+        const uid = userData.uid;
+        return this.dbFire.list('mobileUsers/')
+            .set(uid, userData).then((res) => {
+                this.storage.setItem('mobileUser', userData)
+            })
 
     }
 
-    private saveUser(userData){
-        let result = null;
-        this.dbFire.list('mobileUsers/').push(userData).then( res => {
-            result = res
-          });
-        return result;
+    hasLoggedIn(){
+      return this.storage.getItem('mobileUser');
+    };
+
+    getAllDiscounts() {
+        return this.dbFire.list('allDiscounts/Colins')
+
     }
-
-
-
 
 
     private oAuthLogin(provider: firebase.auth.AuthProvider) {
@@ -55,10 +83,12 @@ export class MyFirebase {
     }
 
     signOut() {
-        this.authFire.auth.signOut().then(() => {
-            localStorage.removeItem('isLoggedin');
-        });
-    }
+        this.authFire.auth.signOut()
+            .then(() => {
+            this.storage.remove('mobileUser')
+        })
+    };
+
 
 
 }

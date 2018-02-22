@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {Facebook, FacebookLoginResponse} from "@ionic-native/facebook";
+
 
 
 @Injectable()

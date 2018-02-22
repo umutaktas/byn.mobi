@@ -15,6 +15,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import {MyFirebase} from '../providers/my-firebase/my-firebase';
 import {Facebook} from "@ionic-native/facebook";
 import {LoginWithMailModule} from "../pages/login-with-mail/login-with-mail.module";
+import {NativeStorage} from "@ionic-native/native-storage";
+import {LoginPageModule} from "../pages/login/login.module";
+import {LoginPage} from "../pages/login/login";
 
 
 
@@ -25,12 +28,13 @@ export const firebaseConfig = ({
     projectId: "biyonezamansizindirim",
     storageBucket: "biyonezamansizindirim.appspot.com",
     messagingSenderId: "161289504708"
-    });
+});
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage
+
      ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ export const firebaseConfig = ({
     AngularFireAuthModule,
     UserDataProvider,
     MyFirebase,
+    NativeStorage,
     Facebook
   ]
 })

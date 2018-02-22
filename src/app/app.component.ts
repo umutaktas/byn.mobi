@@ -3,6 +3,9 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
+import {MyFirebase} from "../providers/my-firebase/my-firebase";
+import {LoginPage} from "../pages/login/login";
+
 
 
 
@@ -13,19 +16,35 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
 //  rootPage: any = "OnboardingPage";
-  rootPage: any = "LoginPage";
+
+    rootPage: any ;
+    userData: any = null;
 
   pages: Array<{title: string, component: any, module?:any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
+  constructor(public platform: Platform,
+              public statusBar: StatusBar,
+              public splashScreen: SplashScreen,
+              private myfirebase: MyFirebase) {
 
-    // used for an example of ngFor and navigation
+      let self = this;
+      this.myfirebase.hasLoggedIn()
+          .then(res => {
+              if(res) {
+                  self.userData = res;
+                  self.rootPage = HomePage;
+              } else {
+                  self.rootPage = LoginPage
+              }
+          });
+
+      this.initializeApp();
+
+
     this.pages = [
-      { title: 'İndirimler', component: HomePage },
-    //  { title: 'Kuponlarım', component: CouponsPage, module: 'CouponsPage'},
-
+      { title: 'İndirimler', component: HomePage }
     ];
+
 
   }
 
@@ -33,6 +52,8 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+
+
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
@@ -53,7 +74,8 @@ export class MyApp {
 
   // logout
   logout(){
-     this.nav.setRoot(this.rootPage);
+      this.myfirebase.signOut();
+      this.nav.setRoot("LoginPage");
   }
 
 

@@ -28,27 +28,29 @@
       <!-- editorial list -->
       <ion-list class="animated fadeInUp">
           <ion-item class="editorial-list" *ngFor="let item of latestProducts | async" no-padding (click)="navCtrl.push('CampaingDetailsPage',{product_id: item.id})">
-            
-            <div class="product-image" [ngStyle]="{'background-image': 'url(' + item.images + ')', 'background-size':'contain'}">
-              </div>
-            <h1>{{item.name}}</h1>
-            <h5>{{item.desc }} </h5>
-          </ion-item>
-        </ion-list>
+
+              <div class="product-image" [ngStyle]="{'background-image':  + item.imagePath , 'background-size':'contain'}">
 
 
-        <!-- product list
-        <div class="product-list animated fadeInUp" >
-            <ul class="list">
-              <li class="list-item" *ngFor="let item of latestProducts" (click)="navCtrl.push('ProductDetailsPage',{product_id: item.id})">
-                <div class="product-image" [ngStyle]="{'background-image': 'url(' + item.images[0].src + ')', 'background-size':'cover'}">
                 </div>
-                <h5>{{item.name}}</h5>
-                <small class="category-name">{{item.categories[0].name}}</small>
-                <small class="price">{{item.desc}}</small>
-              </li>
-            </ul>
-          </div>
+              <h1>{{item.discountName}}</h1>
+              <h5>{{item.description }} </h5>
+            </ion-item>
+          </ion-list>
 
-    -->
+
+          <!-- product list
+          <div class="product-list animated fadeInUp" >
+              <ul class="list">
+                <li class="list-item" *ngFor="let item of latestProducts" (click)="navCtrl.push('ProductDetailsPage',{product_id: item.id})">
+                  <div class="product-image" [ngStyle]="{'background-image': 'url(' + item.images[0].src + ')', 'background-size':'cover'}">
+                  </div>
+                  <h5>{{item.name}}</h5>
+                  <small class="category-name">{{item.categories[0].name}}</small>
+                  <small class="price">{{item.desc}}</small>
+                </li>
+              </ul>
+            </div>
+
+      -->
 </ion-content>
