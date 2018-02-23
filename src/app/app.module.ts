@@ -15,9 +15,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import {MyFirebase} from '../providers/my-firebase/my-firebase';
 import {Facebook} from "@ionic-native/facebook";
 import {LoginWithMailModule} from "../pages/login-with-mail/login-with-mail.module";
-import {NativeStorage} from "@ionic-native/native-storage";
-import {LoginPageModule} from "../pages/login/login.module";
+import {IonicStorageModule} from "@ionic/storage";
 import {LoginPage} from "../pages/login/login";
+
 
 
 
@@ -42,6 +42,7 @@ export const firebaseConfig = ({
     HttpModule,
     LoginWithMailModule,
     AngularFireDatabaseModule,
+    IonicStorageModule.forRoot(),
     AngularFireAuthModule,
     AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp, {
@@ -51,8 +52,10 @@ export const firebaseConfig = ({
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
     HomePage
   ],
+
   providers: [
     StatusBar,
     SplashScreen,
@@ -62,7 +65,7 @@ export const firebaseConfig = ({
     AngularFireAuthModule,
     UserDataProvider,
     MyFirebase,
-    NativeStorage,
+   // NativeStorage,
     Facebook
   ]
 })

@@ -3,8 +3,8 @@ import 'rxjs/add/operator/map';
 import {AngularFireDatabase} from "angularfire2/database";
 import {AngularFireAuth} from "angularfire2/auth";
 import * as firebase from "firebase";
-import {Facebook, FacebookLoginResponse} from "@ionic-native/facebook";
-import {NativeStorage} from "@ionic-native/native-storage";
+import {Facebook} from "@ionic-native/facebook";
+import {Storage} from "@ionic/storage";
 
 
 
@@ -17,7 +17,7 @@ export class MyFirebase {
   constructor(private dbFire: AngularFireDatabase,
               private  authFire: AngularFireAuth,
               private face: Facebook,
-              private storage: NativeStorage) {
+              private storage: Storage) {
 
   }
 
@@ -55,13 +55,13 @@ export class MyFirebase {
         const uid = userData.uid;
         return this.dbFire.list('mobileUsers/')
             .set(uid, userData).then((res) => {
-                this.storage.setItem('mobileUser', userData)
+                this.storage.set('mobileUser', userData)
             })
 
     }
 
     hasLoggedIn(){
-      return this.storage.getItem('mobileUser');
+      return this.storage.get('mobileUser');
     };
 
     getAllDiscounts() {
